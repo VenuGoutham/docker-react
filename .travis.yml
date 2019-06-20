@@ -7,3 +7,17 @@ before_install:
 
 script:
   - docker run venugoutham/docker-react npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app:  "sampleApp"
+  env:  "Docker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-961286865059"
+  bucket_path: "sampleApp"
+  on:
+    branch: master
+    access_key_id: $ACCESS_KEY_ID
+    secret_access_key:
+      secure: "$SECRET_ACCESS_KEY"
+  
