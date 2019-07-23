@@ -17,7 +17,8 @@ deploy:
   bucket_path: "sampleApp"
   on:
     branch: master
-    access_key_id: $ACCESS_KEY_ID
+    access_key_id: 
+      secure: $ACCESS_KEY_ID
     secret_access_key:
       secure: "$SECRET_ACCESS_KEY"
 
